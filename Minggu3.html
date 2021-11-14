@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Praktikum Minggu 3</title>
+    
+    <label for="tema">Pilih Tema : </label>
+        <select name="tema" id="tema" onchange="pilihTema()">
+            <option value="putih">White</option>
+            <option value="hitam">Black</option>
+            <option value="red">Red</option>
+        </select>
+    
+    
+</head>
+    <br>
+    <h1>My Website</h1>
+    <br>
+        <label for="Ojek">Aplikasi Ojek Online Favorit : </label>
+        <select name="Ojek" id="Ojek" onchange="pilihOjOl()">
+            <option value="Gojek">Gojek</option>
+            <option value="Grab">Grab</option>
+            <option value="Maxim">Maxim</option>
+        </select>
+
+    <p id="Pilihan"></p>
+
+        <label for="faktorial">Input Number: </label>
+        <input type="text" id="faktorial" name="faktorial">
+        <button type="submit" id="faktorial" onclick="pilihFaktorial()">Get Factorial</button>
+
+    <p id="Hasilfaktorial"></p>
+
+    <script>
+        
+        function pilihTema(){
+            var tema = document.getElementById("tema").value;
+            if(tema == "putih"){
+                document.body.style.backgroundColor = "white";
+                document.body.style.color = "black";
+            }else if(tema == "hitam"){
+                document.body.style.backgroundColor = "black";
+                document.body.style.color = "white";
+            }else if (tema == "red"){
+                document.body.style.backgroundColor = "red";
+                document.body.style.color = "black";
+            }
+        }
+
+        function pilihOjOl(){
+            var ojek = document.getElementById("OjOl").value;
+                if (OjOl == "Gojek"){
+                    document.getElementById("pilihan").innerHTML = "GO-JEK adalah pelopor aplikasi ojek online di Indonesia. Bisa dibilang bahwa GO-JEK adalah layanan ojek online yang saat ini menjadi yang terbesar di Indonesia. Semenjak kemunculan GO-JEK, semakin banyak aplikasi ojek online lainnya yang bermunculan.";
+                }else if (OjOl == "Grab"){
+                    document.getElementById("pilihan").innerHTML = "Grab adalah aplikasi yang menyediakan layanan GrabCar bagi Anda yang ingin diantar dengan mobil pribadi berplat hitam, GrabTaxi untuk memperoleh taksi konvensional terdekat dengan tempat Anda, GrabBike untuk memesan jasa ojek online, dan GrabExpress yang merupakan jasa pengiriman paket dan dokumen";
+                }else if (OjOl == ""){
+                    document.getElementById("pilihan").innerHTML = "maxim adalah layanan ride-sharing asal Rusia yang sudah beroperasi di beberapa negara, termasuk Indonesia. Layanan maxim yang salah satunya terdiri dari ojek online sudah masuk ke beberapa kota besar di Tanah Air, seperti Jakarta dan Balikpapan.";
+                }else{
+                document.getElementById("pilihan").innerHTML = "";
+            }
+        }
+
+        function pilihFaktorial(){
+            var angka = document.getElementById("faktorial").value;
+            var hasil = 1;
+            var bil = 0;
+            for (bil = angka; bil >= 1; bil--){
+                hasil = hasil * bil;
+            }
+            document.getElementById("Hasilfaktorial").innerHTML = hasil;
+        }
+        
+    </script>
+    
+</body>
+</html>
